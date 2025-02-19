@@ -1,1 +1,3 @@
 #Gitignore initialized
+venv/
+__pycache__/
