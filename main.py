@@ -11,10 +11,13 @@ def main():
     print("Starting asteroids!")
     pygame.init()
     pygame.font.init()
+    my_font = pygame.font.SysFont("Comic Sans MS", 60)
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
     score = 0
+    strscore = "0"
     
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -37,8 +40,10 @@ def main():
                 return
         updatable.update(dt)
 
-        screen.fill((0, 0, 0))        
-        
+        screen.fill((0, 0, 0))
+        text_surface = my_font.render(strscore, False, (255, 255, 255))
+        screen.blit(text_surface, ( 0, 0))
+
         for object in drawable:
             object.draw(screen)
 
@@ -54,6 +59,8 @@ def main():
                     bullet.kill()
                     score += asteroid.score
                     asteroid.split()
+
+        strscore = str(score)
 
 
 
