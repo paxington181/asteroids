@@ -5,6 +5,7 @@ Goal 2:  Feature creep time!
 
 Additions:
 Scoring:
+    score in upper corner
     3 per small
     2 per medium
     1 per large
