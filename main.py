@@ -17,7 +17,6 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     score = 0
-    strscore = "0"
     
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -41,7 +40,7 @@ def main():
         updatable.update(dt)
 
         screen.fill((0, 0, 0))
-        text_surface = my_font.render(strscore, False, (255, 255, 255))
+        text_surface = my_font.render(str(score), False, (255, 255, 255))
         screen.blit(text_surface, ( 0, 0))
 
         for object in drawable:
